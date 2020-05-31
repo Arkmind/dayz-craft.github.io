@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+body, html {
+    min-height: 100%;
+}
+
+body {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+    line-height: 38px;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+input[type=text] {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #1d1202;
+    background: #efefef;
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
+    transition: all .3s ease-in-out;
+}
+
+input[type=text]::-webkit-input-placeholder {
+    color: #efefef;
+    text-indent: 0;
+    font-weight: 300;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    background: #efefef;
+    padding: 11.5px 15px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1d1202;
+    text-align: left;
+    border-radius: 3px;
+}
+
+input[type=text]:focus,
+input[type=text]:active {
+    outline: 0;
+}
+
+input[type=checkbox] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: inherit;
+    padding: 10px;
+    width: auto;
+    transition: color .2s ease, background-color .2s ease;
+}
+
+.background {
+    position: fixed;
+    z-index: -1;
+    background: rgb(136,64,0);
+    background: linear-gradient(148deg, rgba(136,64,0,1) 0%, rgba(83,39,0,1) 35%, rgba(66,31,0,1) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.app > div {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3em;
+}
+
+.app > div:nth-child(1) {
+    width: 30%;
+    padding-right: 1.5em;
+}
+
+.app > div:nth-child(2) {
+    width: 70%;
+    padding-left: 1.5em;
+}
+
+
+.input {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.results > div {
+    display: flex;
+}
+.results > div > div.mod {
+    width: 36px;
+    padding: 0;
+    line-height: 36px !important;
+    text-align: center;
+    margin: 0 10px 10px 0;
+}
+.results > div > div.mod > span {
+    width: 100%;
+    font-weight: 600;
+}
+
+.results > div > div.mod:empty {
+    opacity: 0;
+}
+.results > div > div {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    color: #1d1202;
+    background: #efefef;
+    border: 0;
+    border-radius: 3px;
+    padding: 7px 15px;
+    margin: 0 0 10px 0;
+    box-sizing: border-box;
+}
+
+.results > div > div > span {
+    height: 20px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    display: inline-table;
+    width: 29.412%;
+    text-align: center;
+}
+
+.results > div > div > span.width-550 {
+    width: 64.5%;
+}
+
+.results > div > div > span.divider {
+    display: inline-block;
+    width: 5.882%;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.results > div > div > span > img {
+    height: 60px;
+}
+
+.france {
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(to right, #002495 0, #002495 33%, #FFF 33%, #FFF 66%, #ed2939 66%, #ed2939 100%); 
+}
+
+.language-width { width: calc(100% - 177px); }
+.language-width-fix { width: calc(100% - 169px) }
+
+.mini-flag {
+    display: inline-block;
+    width: 64px;
+} .mini-flag > .flag > div {
+    border-radius: 4px;
+}
+
+.flag {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-top: 50%;
+}
+.flag > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border .2s ease;
+}
+.flag > div.hover, .flag > div:hover, .flag.hover > div, .flag:hover > div, .mini-flag.hover > .flag > div, .mini-flag:hover > .flag > div  {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.flag > div.hover, .flag > div:hover, 
+.flag.hover > div, .flag:hover > div, 
+.mini-flag.hover > .flag > div, .mini-flag:hover > .flag > div  {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.flag > div.hover > .checkbox, .flag > div:hover > .checkbox, 
+.flag.hover > div > .checkbox, .flag:hover > div > .checkbox, 
+.mini-flag.hover > .flag > div > .checkbox, .mini-flag:hover > .flag > div > .checkbox {
+    background-color: #efefef;
+    color: #1d1202;
+}
+
+div.flag-checkbox {
+    border: 2px solid #efefef;
+    color: #fff;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: inherit;
+    height: 100%;
+    width: 100%;
+    transition: color .2s ease, background-color .2s ease;
+}
+
+.mini {
+    font-size: 10px;
+}
+
+.mod-checkbox {
+    position: relative;
+    margin: 10px 20px 0 0;
+    cursor: pointer;
+}
+.mod-checkbox label {
+    border: 2px solid #fff;
+}
+.mod-checkbox > input[type=checkbox] {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+.mod-checkbox > input[type=checkbox]:hover + label, .mod-checkbox > input[type=checkbox]:checked + label {
+    background-color: transparent;
+    color: #fff;
+}
+
+/* Bootstrap */
+
+.w-50 { width: 50%; }
+.w-100 { width: 100%; }
+
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+.d-flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+
+.brr-0 {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.brl-0 {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.mt-2 { margin-top: 2em; }
+.mb-1 { margin-bottom: 1em; }
+.mr-1 { margin-right: 1em; }
+
+.w-max-content { width: max-content; }
+.fw-400 { font-weight: 400 !important; }

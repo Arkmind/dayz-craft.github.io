@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <title>DayZ Crafts</title>
+    <script src="https://cdn.jsdelivr.net/npm/fuse-js-latest@3.1.0/dist/fuse.min.js"></script>
+    <script src="js/helper.js"></script>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="app">
+        <div>
+            <div>
+                <div>
+                    <span class="input">
+                        <label class="number"></label>
+                    </span>
+                </div>
+                <div class="mt-2">
+                    <h2 data-translate>{{ success.title }}</h2>
+            
+                    <span class="input mt-1 d-flex">
+                        <label class="brr-0" data-translate>{{ success.search }}</label>
+                        <input class="search brl-0" type="text" placeholder="Search for an item">
+                    </span>
+                </div>
+                <div class="mt-2 d-flex">
+                    <h2 class="mr-1 language-width" data-translate>{{ success.select_language }}</h2>
+            
+                    <div class="w-max-content">
+                        <div class="mr-1 mini-flag" data-defaultlanguage="en-EN" onclick="window.T.updateDefaultLanguage('en-EN')">
+                            <div class="flag">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+                                        <clipPath id="s">
+                                            <path d="M0,0 v30 h60 v-30 z"/>
+                                        </clipPath>
+                                        <clipPath id="t">
+                                            <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/>
+                                        </clipPath>
+                                        <g clip-path="url(#s)">
+                                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-flag" data-defaultlanguage="fr-FR" onclick="window.T.updateDefaultLanguage('fr-FR')">
+                            <div class="flag">
+                                <div>
+                                    <div class="france"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-2 d-flex">
+                    <h2 class="mr-1 language-width" data-translate>{{ success.see_results }}</h2>
+            
+                    <div class="w-max-content">
+                        <div class="mr-1 mini-flag" data-resultlanguage="en-EN" onclick="window.T.updateResultLanguage('en-EN')">
+                            <div class="flag">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+                                        <clipPath id="s">
+                                            <path d="M0,0 v30 h60 v-30 z"/>
+                                        </clipPath>
+                                        <clipPath id="t">
+                                            <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/>
+                                        </clipPath>
+                                        <g clip-path="url(#s)">
+                                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-flag" data-resultlanguage="fr-FR" onclick="window.T.updateResultLanguage('fr-FR')">
+                            <div class="flag">
+                                <div>
+                                    <div class="france"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-2 d-flex">
+                    <div class="mr-1 language-width-fix">
+                        <h2 data-translate>{{ success.lightmod }}</h2>
+                    </div>
+            
+                    <div class="w-max-content">
+                        <div class="mr-1 mini-flag" data-lightmod="true" onclick="window.T.updateLightMod(true)">
+                            <div class="flag">
+                                <div class="flag-checkbox">
+                                    <div class="checkbox" data-translate>{{ success.yes }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-flag" data-lightmod="false" onclick="window.T.updateLightMod(false)">
+                            <div class="flag">
+                                <div class="flag-checkbox">
+                                    <div class="checkbox" data-translate>{{ success.no }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-2 d-flex">
+                    <div class="mr-1 language-width-fix">
+                        <h2 data-translate>{{ success.multi_language_results }}</h2>
+                        <span class="mini" data-translate>{{ success.multi_language_results_description }}</span>
+                    </div>
+            
+                    <div class="w-max-content">
+                        <div class="mr-1 mini-flag" data-multilanguage="true" onclick="window.T.updateMultiLanguage(true)">
+                            <div class="flag">
+                                <div class="flag-checkbox">
+                                    <div class="checkbox" data-translate>{{ success.yes }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-flag" data-multilanguage="false" onclick="window.T.updateMultiLanguage(false)">
+                            <div class="flag">
+                                <div class="flag-checkbox">
+                                    <div class="checkbox" data-translate>{{ success.no }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-2">
+                    <h2 data-translate>{{ success.mods }}</h2>
+                    <div class="d-flex flex-wrap mods"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="results"></div>
+            <div class="results results-ing mt-2"></div>
+        </div>
+    </div>
+    <script src="js/EN-en.js"></script>
+    <script src="js/FR-fr.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/recipes.js"></script>
+    <script src="js/translate.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
