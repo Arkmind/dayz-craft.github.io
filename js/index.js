@@ -426,9 +426,7 @@ window.T = {
         // create table from objects returned in search
         obj.forEach(e => {
             this.elements.ingredients.innerHTML += `<div>
-                <div class="mod">
-                    ${e.mod !== 'Vanilla' ? `<span title="${e.mod}">M</span>` : ''}
-                </div>
+                <div class="mod">${e.mod !== 'Vanilla' ? `<span title="${e.mod}">M</span>` : ''}</div>
                 <div>
                     <span>${e.ingredients[0].quantity} ${this.language[code].recipes[e.ingredients[0].item]}${!lightmod ? `<br><img src="img/${e.ingredients[0].item}.png"/>` : ''}</span>
                     <span class="divider">+</span>
