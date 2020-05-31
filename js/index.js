@@ -376,11 +376,11 @@ window.T = {
             this.elements.name.innerHTML += `<div>
                 <div class="mod">${e.mod !== 'Vanilla' ? `<span title="${e.mod}">M</span>` : ''}</div>
                 <div>
-                    <span>${this.language[code].recipes[e.name]}${!lightmod && `<br><img src="img/${e.name}.png"/>`}</span>
+                    <span>${this.language[code].recipes[e.name]}${!lightmod ? `<br><img src="img/${e.name}.png"/>` : ''`}</span>
                     <span class="divider">></span>
-                    <span>${e.ingredients[0].quantity} ${this.language[code].recipes[e.ingredients[0].item]}${!lightmod && `<br><img src="img/${e.ingredients[0].item}.png"/>`}</span>
+                    <span>${e.ingredients[0].quantity} ${this.language[code].recipes[e.ingredients[0].item]}${!lightmod ? `<br><img src="img/${e.ingredients[0].item}.png"/>` : ''`}</span>
                     <span class="divider">+</span>
-                    <span>${e.ingredients[1].quantity} ${this.language[code].recipes[e.ingredients[1].item]}${!lightmod && `<br><img src="img/${e.ingredients[1].item}.png"/>`}</span>
+                    <span>${e.ingredients[1].quantity} ${this.language[code].recipes[e.ingredients[1].item]}${!lightmod ? `<br><img src="img/${e.ingredients[1].item}.png"/>` : ''`}</span>
                 </div>
             </div>`;
         });
@@ -430,11 +430,11 @@ window.T = {
                     ${e.mod !== 'Vanilla' ? `<span title="${e.mod}">M</span>` : ''}
                 </div>
                 <div>
-                    <span>${e.ingredients[0].quantity} ${this.language[code].recipes[e.ingredients[0].item]}${!lightmod && `<br><img src="img/${e.ingredients[0].item}.png"/>`}</span>
+                    <span>${e.ingredients[0].quantity} ${this.language[code].recipes[e.ingredients[0].item]}${!lightmod ? `<br><img src="img/${e.ingredients[0].item}.png"/>` : ''`}</span>
                     <span class="divider">+</span>
-                    <span>${e.ingredients[1].quantity} ${this.language[code].recipes[e.ingredients[1].item]}${!lightmod && `<br><img src="img/${e.ingredients[1].item}.png"/>`}</span>
+                    <span>${e.ingredients[1].quantity} ${this.language[code].recipes[e.ingredients[1].item]}${!lightmod ? `<br><img src="img/${e.ingredients[1].item}.png"/>` : ''`}</span>
                     <span class="divider"><</span>
-                    <span>${this.language[code].recipes[e.name]}${!lightmod && `<br><img src="img/${e.name}.png"/>`}</span>
+                    <span>${this.language[code].recipes[e.name]}${!lightmod ? `<br><img src="img/${e.name}.png"/>` : ''`}</span>
                 </div>
             </div>`;
         });
